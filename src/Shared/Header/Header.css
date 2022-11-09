@@ -4,3 +4,13 @@
     border-radius: 50%;
     margin-right: 5px;
 }
+
+.container-fluid{
+    width: 80%;
+    margin: auto;
+
+}
+
+.nav-link:hover{
+    color: orchid;
+}

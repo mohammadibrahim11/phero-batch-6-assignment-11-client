@@ -1,8 +1,10 @@
 import React from 'react';
+import useTitle from '../../Hooks/UseTitle';
 // import { useState } from 'react';
 
 const AddService = () => {
-
+    
+    useTitle('AddService')
     // const [addService,setAddService] =useState([])
 
     const handleAddService =event=>{

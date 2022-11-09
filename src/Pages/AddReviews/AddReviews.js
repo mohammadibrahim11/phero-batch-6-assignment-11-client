@@ -1,12 +1,14 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../Context/AuthProvider';
 import { useLoaderData } from 'react-router-dom';
+import useTitle from '../../Hooks/UseTitle';
 
 
 const AddReviews = () => {
 
     const {_id } = useLoaderData();
     const {user} =useContext(AuthContext);
+    useTitle('addreviews')
 
     const handleAddReview =event=>{
         event.preventDefault();

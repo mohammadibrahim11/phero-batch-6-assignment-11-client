@@ -18,29 +18,29 @@ const Header = () => {
 
     return (
 
-<nav class="navbar container navbar-expand-lg bg-white">
+<nav class="navbar navbar-expand-lg bg-white sticky-top">
   <div class="container-fluid">
-    <Link class="navbar-brand" to="/">Printress</Link >
+    <Link class="navbar-brand" to="/">proCleaner</Link >
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-      <ul class="navbar-nav me-auto  m-auto center mb-2 mb-lg-0">
-        <li class="nav-item">
-          <Link class="nav-link active" aria-current="page" to="/home">Home</Link >
+      <ul class="navbar-nav me-auto  m-auto center mb-2  mb-lg-0">
+        <li class="nav-item pe-2">
+          <Link class="nav-link " aria-current="page" to="/home">Home</Link >
         </li>
-        <li class="nav-item">
+        <li class="nav-item pe-2">
           <Link class="nav-link" to="/services">Services</Link >
         </li>
         {
-          user?.email ? <> <li class="nav-item">
+          user?.email ? <> <li class="nav-item pe-2">
           <Link class="nav-link" to="/addservice">Add service</Link >
         </li>
-        <li class="nav-item">
+        <li class="nav-item pe-2">
           <Link class="nav-link" to="/myreviews">my reviews</Link >
         </li> </>  :  ''
         }
-        <li class="nav-item">
+        <li class="nav-item pe-2">
           <Link class="nav-link" to="/blog">Blog</Link >
         </li>
       </ul>
