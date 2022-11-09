@@ -5,7 +5,7 @@ import { useLoaderData } from 'react-router-dom';
 
 const AddReviews = () => {
 
-    const {_id, } = useLoaderData();
+    const {_id } = useLoaderData();
     const {user} =useContext(AuthContext);
 
     const handleAddReview =event=>{

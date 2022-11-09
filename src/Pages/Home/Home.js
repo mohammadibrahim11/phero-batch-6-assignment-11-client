@@ -1,13 +1,32 @@
 import React from "react";
+// import { useEffect } from "react";
+// import { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
-import Services from "../Services/Services";
+import AddService from "../AddService/AddService";
+// import Services from "../Services/Services";
 
 import "./Home.css";
 import ServicesHome from "./servicesHome/ServicesHome";
 
 const Home = () => {
   const servicesHome = useLoaderData();
-  console.log(servicesHome);
+
+  // const [addService , setAddService] = useState([]);
+
+  // useEffect( ()=>{
+  //   fetch('http://localhost:5000/addservice')
+  //   .then(res => res.json())
+  //   .then(data => setAddService(data))
+  // },[]);
+
+
+
+  // useEffect( ()=>{
+  //   fetch(`http://localhost:5000/reviews`)
+  //   .then(res => res.json())
+  //   .then(data => console.log(data));
+  // },[])
+  // console.log(servicesHome);
 
   return (
     <div>
@@ -31,6 +50,9 @@ const Home = () => {
         {servicesHome.map((service) => (
           <ServicesHome key={service._id} service={service}></ServicesHome>
         ))}
+        {/* {
+          addService.map(ads => <AddService key={ads._id} ads={ads}></AddService>)
+        } */}
       </div>
 
       <div className="mt-4">

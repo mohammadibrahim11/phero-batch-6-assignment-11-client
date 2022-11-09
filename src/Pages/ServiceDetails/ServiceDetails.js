@@ -44,7 +44,7 @@ const ServiceDetails = () => {
 
         <div className="d-flex pt-3 justify-content-between fs-5 fw-bold text-danger" style={{ width: "90%", margin: "auto"}}>
             {price}
-            <p className="pe-2"> ratings: {(ratings).toFixed(1)}</p>
+            <p className="pe-2"> ratings: {ratings}</p>
         </div>
         <div className="text-start text-secondary " style={{ width: "90%", margin: "auto"}}>
      <p className="text-primary fw-bold">
