@@ -18,7 +18,7 @@ const Header = () => {
 
     return (
 
-<nav class="navbar navbar-expand-lg bg-white sticky-top">
+<nav class="navbar navbar-expand-lg bg-light sticky-top">
   <div class="container-fluid">
     <Link class="navbar-brand" to="/">proCleaner</Link >
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
