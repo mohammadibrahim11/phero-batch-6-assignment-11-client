@@ -11,12 +11,12 @@ const UserReview = ({ userReview,handleUserReviewDelete }) => {
   const { name, photoURL, text ,_id,service} = userReview;
 
 
-  const [userReviews,setUserReviews] = useState({})
+  const [userOwnReviews,setUserOwnReviews] = useState({})
 
   useEffect(()=>{
     fetch(  `http://localhost:5000/services/${service}`)
     .then(res => res.json())
-    .then(data => setUserReviews(data))
+    .then(data => setUserOwnReviews(data))
   },[service])
 
 
@@ -24,7 +24,7 @@ const UserReview = ({ userReview,handleUserReviewDelete }) => {
 
   return (
     <div>
-      {userReviews ? (
+      {userOwnReviews ? (
         <div className="border p-3 w-25 m-auto shadow mt-5 mb-5">
               <div className="d-flex ms-3">
               <div>
@@ -36,7 +36,7 @@ const UserReview = ({ userReview,handleUserReviewDelete }) => {
           </div>
               </div>
           <div className="pt-4 d-flex justify-content-evenly ">
-            <button onClick={handleUserReviewDelete(_id)} className="btn btn-primary me-3">edit</button>
+            <button onClick={()=>handleUserReviewDelete(_id)} className="btn btn-primary me-3">edit</button>
             <button className="btn btn-danger">delete</button>
           </div>
         </div>

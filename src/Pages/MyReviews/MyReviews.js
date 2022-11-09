@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useContext } from "react";
+import { toast } from "react-toastify";
 import { AuthContext } from "../../Context/AuthProvider";
 import UserReview from "../UserReview/UserReview";
 
@@ -18,7 +19,7 @@ const MyReviews = () => {
       });
   }, [user?.email]);
 
-  const handleUserReviewDelete = (id) => {
+  const handleUserReviewDelete = id => {
     const agree = window.confirm(
       "are you sure, you want to delete your review"
     );
@@ -28,6 +29,12 @@ const MyReviews = () => {
       })
         .then((res) => res.json())
         .then((data) => {
+
+            if(data.deletedCount > 0){
+                toast.success('deleted successfully')
+                const remaining = userReviews.filter(rvw => rvw._id !== id);
+                setUserReviews(remaining);
+            }
           console.log(data);
 
           // if(data.deleteCount)
