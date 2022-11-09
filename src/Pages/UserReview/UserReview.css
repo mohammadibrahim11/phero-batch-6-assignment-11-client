@@ -1,0 +1,13 @@
+.user-review-img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+}
+
+.user-review-text {
+  font-size: 15px;
+  line-height: 1px;
+  text-align: left;
+  margin-top: 25px;
+  margin-left: 12px;
+}
