@@ -36,8 +36,8 @@ const UserReview = ({ userReview,handleUserReviewDelete }) => {
           </div>
               </div>
           <div className="pt-4 d-flex justify-content-evenly ">
-            <button onClick={()=>handleUserReviewDelete(_id)} className="btn btn-primary me-3">edit</button>
-            <button className="btn btn-danger">delete</button>
+            <button  className="btn btn-primary me-3">edit</button>
+            <button onClick={()=>handleUserReviewDelete(_id)} className="btn btn-danger">delete</button>
           </div>
         </div>
       ) : (
