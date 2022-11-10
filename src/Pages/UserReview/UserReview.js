@@ -2,17 +2,17 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
 import "./UserReview.css";
 
-const UserReview = ({ userReview,handleUserReviewDelete }) => {
-  console.log(userReview);
-  const { user } = useContext(AuthContext);
-  console.log(userReview);
+const UserReview = ({ userReview,handleUserReviewDelete,handleUpdateReview }) => {
+
   const { name, photoURL, text ,_id,service} = userReview;
 
 
   const [userOwnReviews,setUserOwnReviews] = useState({})
+
 
   useEffect(()=>{
     fetch(  `http://localhost:5000/services/${service}`)
@@ -37,8 +37,11 @@ const UserReview = ({ userReview,handleUserReviewDelete }) => {
           </div>
               </div>
           <div className="pt-4 d-flex justify-content-evenly ">
-            <button  className="btn btn-primary me-3">edit</button>
+           <Link to='/updateReview'> <button  className="btn btn-primary me-3">update</button></Link>
             <button onClick={()=>handleUserReviewDelete(_id)} className="btn btn-danger">delete</button>
+          </div>
+          <div>
+           
           </div>
         </div>
       ) : (

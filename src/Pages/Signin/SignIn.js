@@ -54,97 +54,80 @@ const SignIn = () => {
         setError(error.message);
       });
   };
-  
+
   return (
     <div className="w-50 m-auto">
-     
-        <form className="shadow p-5" onSubmit={handleSignIn}>
+      <form className="shadow p-5" onSubmit={handleSignIn}>
+        <div className="w-50 m-auto text-start">
+          <label class="form-label  mt-2" for="email">
+            your name
+          </label>
 
-            <div className="w-50 m-auto text-start" >
-            <label class="form-label  mt-2" for="email">
-              your name
-            </label>
-
-            <input
-              type="text"
-              class="form-control"
-              id="name"
-              name="name"
-              placeholder="Your name "
-            />
-          
-            </div>
-          <div class="w-50 m-auto text-start ">
-            <label class="form-label  mt-2" for="photourl">
-              photo url
-            </label>
-            <input className="form-control" type='photoURL' name='photoURL' placeholder='photourl'/>
-          </div>
-          <div class="w-50 m-auto text-start ">
-            <label class="form-label  mt-2" for="email">
-              Email address
-            </label>
-            <input
-              type="email"
-              class="form-control"
-              id="email"
-              name="email"
-              placeholder="Your email address"
-            />
-          </div>
-          <div class="w-50 m-auto text-start mt-2">
-            <label class="form-label" for="password">
-              Password
-            </label>
-            <input
-              type="password"
-              class="form-control"
-              id="password"
-              name="password"
-              placeholder="Password"
-              autocomplete="current-password"
-            />
-          </div>
-          <div class="mb-3 text-danger ">{error}</div>
-          <p className="mt-3">
-            already have an accout?please
-            <Link to="/login">
-              <span className="btn btn-primary  "> log in </span>
-            </Link>
-          </p>
-          <div>
-            <input
-              class="btn btn-primary w-full mt-3"
-              type="submit"
-              value="sign in"
-            />
-          </div>
-
-          <div>
-          <button className="btn btn-primary mt-3" onClick={handleGoogleSignIn}>sign in with google</button>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            placeholder="Your name "
+          />
         </div>
-        </form>
+        <div class="w-50 m-auto text-start ">
+          <label class="form-label  mt-2" for="photourl">
+            photo url
+          </label>
+          <input
+            className="form-control"
+            type="photoURL"
+            name="photoURL"
+            placeholder="photourl"
+          />
+        </div>
+        <div class="w-50 m-auto text-start ">
+          <label class="form-label  mt-2" for="email">
+            Email address
+          </label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            placeholder="Your email address"
+          />
+        </div>
+        <div class="w-50 m-auto text-start mt-2">
+          <label class="form-label" for="password">
+            Password
+          </label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            name="password"
+            placeholder="Password"
+            autocomplete="current-password"
+          />
+        </div>
+        <div class="mb-3 text-danger ">{error}</div>
+        <p className="mt-3">
+          already have an accout?please
+          <Link to="/login">
+            <span className="btn btn-primary  "> log in </span>
+          </Link>
+        </p>
+        <div>
+          <input
+            class="btn btn-primary w-full mt-3"
+            type="submit"
+            value="sign in"
+          />
+        </div>
 
-        {/* <div>
-                    <input type="text" name='name' placeholder='your name' />
-                    <input type='photoURL' name='photoURL'placeholder='url'></input>
-
-                    <input type="email" name='email' placeholder='your email'/>
-
-                    <input type="password" name='password' placeholder='your password' />
-
-                </div>
-
-                <div>
-                   <span className='text-danger'> {error}</span>
-                </div>
-
-                <div>
-                   <input type="submit" value='sign up' />
-                </div> */}
-
-       
-
+        <div>
+          <button className="btn btn-primary mt-3" onClick={handleGoogleSignIn}>
+            sign in with google
+          </button>
+        </div>
+      </form>
     </div>
   );
 };

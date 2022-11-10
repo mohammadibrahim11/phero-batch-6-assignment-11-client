@@ -7,6 +7,8 @@ import './ServiceDetails.css'
 const ServiceDetails = () => {
   const serviceDetails = useLoaderData();
   const {user} = useContext(AuthContext);
+  console.log(user);
+
   console.log(serviceDetails);
 
   const [reviews , setReviews]=useState([]);
@@ -18,15 +20,14 @@ const ServiceDetails = () => {
     .then(data => {
       setReviews(data)
       console.log(data)})
-  },[])
+  },[serviceDetails._id])
 
-//   fs-4 fw-bold pt-2 pb-2 text-start text-danger d-flex justify-content-between"
-        //   style={{ width: "90%", height: "60%", margin: "auto"
+
 
   const { img, price, name, ratings, description ,_id} = serviceDetails;
   return (
     <div className="row">
-        {/* details section */}
+     
       <div className="bg-body bg-secondary col-7 border rounded p-3 ">
         <div>
           <img
@@ -54,7 +55,7 @@ const ServiceDetails = () => {
         </div>
       </div>
       
-      {/* review section */}
+     
       <div className="col-5 border rounded p-2 ">
 
         <div>
