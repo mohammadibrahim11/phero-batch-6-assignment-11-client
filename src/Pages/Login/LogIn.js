@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Navigate, useLocation, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 import useTitle from '../../Hooks/UseTitle';
 
@@ -25,24 +25,31 @@ const LogIn = () => {
    signIn(email,password)
    .then(result=>{
       const user = result.user;
-      const currentUser ={
-        email:user.email
-      }
-      console.log(currentUser);
+      console.log(user);
+    //   const currentUser ={
+    //     email:user.email
+    //   }
+    //   console.log(currentUser);
 
-      fetch('http://localhost:5000/jwt',{
-        method:'POST',
-        headers:{
-            'content-type' : 'application/json'
-        },
-        body:JSON.stringify(currentUser)
-      })
-      .then(res => res.json())
-      .then(data => {
-        console.log(data);
-      })
+    //   fetch('http://localhost:5000/jwt'
+      
+    //   ,{
+    //     method:'POST',
+    //     headers:{
+    //         'content-type' : 'application/json'
+    //     },
+    //     body:JSON.stringify(currentUser)
+    //   }
+      
+    //   )
+    //   .then(res => res.json())
+    //   .then(data => {
+    //     console.log(data);
+    //     localStorage.setItem('token',data.token);
+    //     navigate(from, {replace:true});
+    //   })
     //   console.log(user);
-      navigate(from, {replace:true});
+    
       form.reset();
       setError('');
    })
@@ -54,22 +61,35 @@ const LogIn = () => {
   
     }
     return (
-        <div>
-            <form onSubmit={handleLogIn}>
-                <div>
-                    <input type="email" name='email' />
-                    <input type="password" name='password' />
+        <div className='w-50 m-auto'>
+          
 
-                </div>
-               <div>
-               {error}
-               </div>
-                <div>
-                <input type="submit" value="log in" />
-                </div>
+            <form className='shadow p-5' onSubmit={handleLogIn}>
+
+  <div class="w-50 m-auto text-start ">
+    <label class="form-label  mt-2" for="email">Email address</label>
+    <input type="email" class="form-control" id="email" name='email' placeholder="Your email address"/>
+  </div>
+  <div class="w-50 m-auto text-start mt-2">
+    <label class="form-label" for="password">Password</label>
+    <input type="password" class="form-control" id="password" name='password' placeholder="Password" autocomplete="current-password"/>
+  </div>
+  <div class="mb-3 text-danger">
+  
+  {error}
+    </div>
+    <p className='mt-3'>dont have an accout?please  
+     <Link to='/signin'><span className='btn btn-primary  '> sign in </span></Link></p>
+  <div>
+  <input class="btn btn-primary w-full mt-3" type="submit" value="log in" />
+  
+  </div>
+
+</form>
+            
 
               
-            </form>
+           
         </div>
     );
 };

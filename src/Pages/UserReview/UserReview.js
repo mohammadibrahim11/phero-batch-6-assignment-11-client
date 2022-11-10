@@ -6,6 +6,7 @@ import { AuthContext } from "../../Context/AuthProvider";
 import "./UserReview.css";
 
 const UserReview = ({ userReview,handleUserReviewDelete }) => {
+  console.log(userReview);
   const { user } = useContext(AuthContext);
   console.log(userReview);
   const { name, photoURL, text ,_id,service} = userReview;
@@ -32,7 +33,7 @@ const UserReview = ({ userReview,handleUserReviewDelete }) => {
           </div>
           <div className="user-review-text">
             <p className="text-primary"> user name: {name}</p>
-            <p className="text-danger"> user review: {text}</p>
+            <p className="text-danger"> review : {text}</p>
           </div>
               </div>
           <div className="pt-4 d-flex justify-content-evenly ">

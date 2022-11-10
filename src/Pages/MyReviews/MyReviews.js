@@ -2,29 +2,28 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useContext } from "react";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 import { AuthContext } from "../../Context/AuthProvider";
 import useTitle from "../../Hooks/UseTitle";
 import UserReview from "../UserReview/UserReview";
 
 const MyReviews = () => {
-  const { user } = useContext(AuthContext);
+  const { user,logOut } = useContext(AuthContext);
   const [userReviews, setUserReviews] = useState([]);
-
   useTitle('MyReviews')
 
   useEffect(() => {
     fetch(`http://localhost:5000/reviews?email=${user?.email}`)
-      .then((res) => res.json())
+      .then((res) =>res.json())
       .then((data) => {
-        setUserReviews(data);
+        setUserReviews(data)
         console.log(data);
       });
   }, [user?.email]);
 
   const handleUserReviewDelete = id => {
     const agree = window.confirm(
-      "are you sure, you want to delete your review"
+      "are you sure, you want to delete??"
     );
     if (agree) {
       fetch(`http://localhost:5000/reviews/${id}`, {
@@ -40,21 +39,17 @@ const MyReviews = () => {
             }
           console.log(data);
 
-          // if(data.deleteCount)
+          
         });
     }
   };
 
-  // {
-  //     headers:{
-  //         authoraization: `Bearer${localStorage.getItem(service-review-token)}`
-  //     }
 
-  // }
 
   return (
     <div>
-      display my reviews : {userReviews.length}
+    {  userReviews.length > 0 ? <>you have  <span className="text-primary">{userReviews.length} </span> reviews</> : <p className="text-danger text-center">No reviews were added </p>
+ }
       {userReviews.map((userReview) => (
         <UserReview key={userReview._id} 
         userReview={userReview}
@@ -62,6 +57,7 @@ const MyReviews = () => {
         ></UserReview>
       ))}
     </div>
+     
   );
 };
 

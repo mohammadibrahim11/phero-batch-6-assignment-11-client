@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import useTitle from "../../Hooks/UseTitle";
+import ClientReview from "./ClientReview/ClientReview";
 import './Home.css'
 
 
@@ -8,8 +9,10 @@ import "./Home.css";
 import ServicesHome from "./servicesHome/ServicesHome";
 
 const Home = () => {
+
   const servicesHome = useLoaderData();
   useTitle('Home')
+
 
   return (
     <div>
@@ -40,8 +43,10 @@ const Home = () => {
 
       <div className="mt-4">
         <Link to='/services' ><button className="btn btn-primary">see all services</button></Link>
-      </div>
-    </div>
+       </div>
+
+    
+    </div> 
   );
 };
 
