@@ -55,17 +55,17 @@ const Footer = () => {
         <h3 className="fs-5 fw-semibold text-dark text-uppercase mb-9 text-muted" style={{letter_spacing: '1px'}}>Find Me</h3>
         <ul className="nav flex-column">
           <li className="nav-item ">
-            <Link className="nav-link px-0" to="">
+            <Link className="nav-link px-0" to="https://www.facebook.com/">
               <h3 className="fs-6 fw-medium mb-0"><FaFacebook /></h3>
             </Link >
           </li>
           <li className="nav-item">
-            <Link className="nav-link px-0" href="#">
+            <Link className="nav-link px-0" to="https://www.instagram.com/">
               <h3 className="fs-6 fw-medium mb-0"><FaInstagramSquare/></h3>
             </Link >
           </li>
           <li className="nav-item ">
-            <Link className="nav-link px-0" href="#">
+            <Link className="nav-link px-0" to="https://twitter.com/code">
               <h3 className="fs-6 fw-medium mb-0"><FaTwitter/></h3>
             </Link >
           </li>
