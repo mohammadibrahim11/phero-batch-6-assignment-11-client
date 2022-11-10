@@ -22,29 +22,29 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/servicesHome"),
+        loader: () => fetch("https://b6a11-service-review-server-side-mohammadibrahim11.vercel.app/servicesHome"),
       },
       {
         path: "/home",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/servicesHome"),
+        loader: () => fetch("https://b6a11-service-review-server-side-mohammadibrahim11.vercel.app/servicesHome"),
       },
       {
         path: "/services",
         element: <Spinner><Services></Services></Spinner>,
-        loader: () => fetch("http://localhost:5000/services"),
+        loader: () => fetch("https://b6a11-service-review-server-side-mohammadibrahim11.vercel.app/services"),
       },
       {
         path: "/services/:id",
         element: <ServiceDetails></ServiceDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/services/${params.id}`),
+          fetch(`https://b6a11-service-review-server-side-mohammadibrahim11.vercel.app/services/${params.id}`),
       },
       {
         path: "/addreviews/:id",
         element: <PrivateRoute><AddReviews></AddReviews></PrivateRoute>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/services/${params.id}`),
+          fetch(`https://b6a11-service-review-server-side-mohammadibrahim11.vercel.app/services/${params.id}`),
       },
       {
         path: "/login",

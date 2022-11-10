@@ -15,7 +15,7 @@ const UserReview = ({ userReview,handleUserReviewDelete,handleUpdateReview }) =>
 
 
   useEffect(()=>{
-    fetch(  `http://localhost:5000/services/${service}`)
+    fetch(  `https://b6a11-service-review-server-side-mohammadibrahim11.vercel.app/services/${service}`)
     .then(res => res.json())
     .then(data => setUserOwnReviews(data))
   },[service])
@@ -26,7 +26,7 @@ const UserReview = ({ userReview,handleUserReviewDelete,handleUpdateReview }) =>
   return (
     <div>
       {userOwnReviews ? (
-        <div className="border p-3 w-25 m-auto shadow mt-5 mb-5">
+        <div className="border p-3 w-50 m-auto shadow mt-5 mb-5">
               <div className="d-flex ms-3">
               <div>
             <img className="user-review-img" src={photoURL} alt="" srcset="" />
