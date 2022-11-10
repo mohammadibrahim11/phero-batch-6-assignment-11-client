@@ -53,13 +53,12 @@ const AddReviews = () => {
 
     }
     return (
-        <div>
-            add a reviews for me.please!
-
+        <div className='w-50 m-auto shadow mt-5'>
+            <p className='text-danger'>add a review</p>
             <form onSubmit={handleAddReview}>
                 <div>
                     <input type="text" name='name'
-                    placeholder='your name'  />
+                    placeholder='your name'  className='m-2 ' />
 
                     <input type="photoURL" name='photoURL'
                     placeholder='enter your photo url'/> 
@@ -68,7 +67,7 @@ const AddReviews = () => {
                 <textarea name="message" id="" cols="30" rows="10" className='w-30' placeholder='write a review about my service' ></textarea>
 
                <div>
-               <input className='btn btn-danger' type="submit" value="add a review" />
+               <input className='btn btn-danger m-2'  type="submit" value="add a review" />
              
                </div>
             </form>

@@ -57,28 +57,32 @@ const AddService = () => {
     // <a href="https://ibb.co/PWV7Nz4"><img src="https://i.ibb.co/myPLGFt/image.jpg" alt="image" border="0"></a>
           
     return (
-        <div>
-            add a reviews for me.please!
+        <div  className='shadow w-50 m-auto mt-5'>
+            
 
             <form onSubmit={handleAddService}>
                 <div>
                     <input type="text" name='name'
-                    placeholder='service name'  />
+                    placeholder='service name' className='m-2'  />
+
+            
 
                     <input type="photoURL" name='photoURL'
-                    placeholder='photo'/> 
+                    placeholder='photo'  /> 
+                    <br />
 
                     <input type="number" name='ratings'
-                    placeholder='ratings'/> 
+                    placeholder='ratings'className='m-2' /> 
+                  
 
                     <input type="text" name='price'
                     placeholder='price'/> 
                 </div>
-
+                <br />
                 <textarea name="message" id="" cols="30" rows="10" className='w-30' placeholder='service description' ></textarea>
 
                <div>
-               <input className='btn btn-danger' type="submit" value="add a service" />
+               <input className='btn btn-danger m-2' type="submit" value="add a service" />
              
                </div>
             </form>
