@@ -10,7 +10,6 @@ import UserReview from "../UserReview/UserReview";
 const MyReviews = () => {
   const { user, logOut } = useContext(AuthContext);
   const [userReviews, setUserReviews] = useState([]);
-  // const [updateReview, setUpdateReview] = useState();
   useTitle("MyReviews");
 
   useEffect(() => {
