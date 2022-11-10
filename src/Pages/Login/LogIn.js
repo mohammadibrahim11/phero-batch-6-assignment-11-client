@@ -26,7 +26,7 @@ const LogIn = () => {
    .then(result=>{
       const user = result.user;
       console.log(user);
-    //   navigate('/addreviews')
+      navigate('/')
       form.reset();
       setError('');
    })

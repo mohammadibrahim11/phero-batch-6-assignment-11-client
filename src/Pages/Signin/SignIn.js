@@ -1,11 +1,12 @@
 // import { signInWithPopup } from 'firebase/auth';
 import React, { useContext, useState } from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 // import { Link, Navigate } from 'react-router-dom';
 import { AuthContext } from "../../Context/AuthProvider";
 
 const SignIn = () => {
   const [error, setError] = useState();
+  const navigate = useNavigate();
 
   const { createUser, updateUserProfile, signInWithGoogle } =
     useContext(AuthContext);
@@ -25,6 +26,7 @@ const SignIn = () => {
         console.log(user);
         form.reset();
         handleUserProfile(name, photoURL);
+        navigate('/')
       })
       .catch((error) => {
         console.error(error);

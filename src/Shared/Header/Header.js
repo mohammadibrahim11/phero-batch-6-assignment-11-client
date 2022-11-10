@@ -53,7 +53,7 @@ const Header = () => {
         </div>
 
         {
-          user?.email ?  <div   onClick={handleSignOut} className='btn btn-primary'>log out</div> : <> <Link to='/login'> <button class="btn btn-outline-success" >log in</button></Link>
+          user?.email  ?  <div   onClick={handleSignOut} className='btn btn-primary'>log out</div> : <> <Link to='/login'> <button class="btn btn-outline-success" >log in</button></Link>
 
           <Link to='/signin'> <button class="btn btn-outline-success" >sign in</button></Link>
           </> 
