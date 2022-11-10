@@ -7,6 +7,10 @@ const Blog = () => {
 
     return (
         <div>
+
+         <div className='text-danger mt-5 mb-3  fs-1'>
+            Blog
+         </div>
           
    <section class="blog-area pb-5">
    <div class="container mt-5 pt-5 bg-dark-50">

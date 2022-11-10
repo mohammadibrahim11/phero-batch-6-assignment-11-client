@@ -54,10 +54,14 @@ const AddService = () => {
 
     }
 
-    // <a href="https://ibb.co/PWV7Nz4"><img src="https://i.ibb.co/myPLGFt/image.jpg" alt="image" border="0"></a>
+   
           
     return (
         <div  className='shadow w-50 m-auto mt-5'>
+
+            <div className='fs-3 text-danger text-center'>
+                Add a Service
+            </div>
             
 
             <form onSubmit={handleAddService}>
