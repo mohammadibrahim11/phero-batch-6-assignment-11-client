@@ -10,7 +10,7 @@ const Services = () => {
   useTitle("Services");
 
   useEffect(() => {
-    fetch("https://b6a11-service-review-server-side-mohammadibrahim11.vercel.app/services")
+    fetch("http://localhost:5000/services")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

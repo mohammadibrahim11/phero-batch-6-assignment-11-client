@@ -15,7 +15,7 @@ const UserReview = ({ userReview,handleUserReviewDelete,handleUpdateReview }) =>
 
 
   useEffect(()=>{
-    fetch(  `https://b6a11-service-review-server-side-mohammadibrahim11.vercel.app/services/${service}`)
+    fetch(  `http://localhost:5000/services/${service}`)
     .then(res => res.json())
     .then(data => setUserOwnReviews(data))
   },[service])
